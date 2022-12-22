@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!--¡¡VERSIÓN!!-->
+        <!-- BOTóN -->
+        <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+        
+    </head>
+  
+    <body>
+
+        <script>
+            typeSignal = "";
+            signal = "";
+            function changeSignal(signal){
+                if (signal == 'seno') {
+                    typeSignal = 'SENO';
+                } else if (signal == 'coseno'){
+                    typeSignal ='COSENO';
+                } 
+            }
+            
+            function actualSignal(){
+                if (typeSignal == ''){
+                    alert("Sin señal elegida")
+                } else {
+                    alert("Señal elegida: " + typeSignal);
+                }
+            }
+        </script>
+        
+        <a-scene background="color: grey">
+            <a-entity cursor="rayOrigin: mouse" ></a-entity>
+            
+            <a-gui-button value="SENO" onClick="changeSignal('seno')" position="0 2.5 -5"></a-gui-button>
+            <a-gui-button value="COSENO" onClick="changeSignal('coseno')" position="2.5 2.5 -5"></a-gui-button>
+            <a-gui-button value="SEÑAL" onclick="actualSignal()" position="5 2.5 -5"></a-gui-button>
+              
+        </a-scene>
+
+    </body>
+</html>
