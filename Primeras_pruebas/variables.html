@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!--¡¡VERSIÓN!!-->
+        <!-- BOTóN -->
+        <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+        
+    </head>
+  
+    <body>
+
+        <script>
+            AFRAME.registerComponent('prueba',{
+                init: function(){
+                    alert("FUNCIONA")
+                    typeSignal = "";
+                    signal = "";
+                },
+                events: {
+                    click: function(){
+                        alert("Dentro")
+                        function changeSignal(signal){
+                            if (signal == Math.sin) {
+                                typeSignal = 'SENO';
+                            } else if (signal == Math.cos){
+                                typeSignal ='COSENO';
+                            } 
+                        }
+                        function actualSignal(){
+                            if (typeSignal == ''){
+                                alert("Sin señal elegida")
+                            } else {
+                                alert("Señal elegida: " + typeSignal);
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <a-scene background="color: grey" prueba>
+            <a-entity cursor="rayOrigin: mouse" ></a-entity>
+            
+            <a-gui-button value="SENO" onClick="changeSignal(Math.sin)" position="0 2.5 -5"></a-gui-button>
+            <a-gui-button value="COSENO" onClick="changeSignal(Math.cos)" position="2.5 2.5 -5"></a-gui-button>
+            <a-gui-button value="SEÑAL" onclick="actualSignal()" position="5 2.5 -5"></a-gui-button>
+              
+        </a-scene>
+
+    </body>
+</html>

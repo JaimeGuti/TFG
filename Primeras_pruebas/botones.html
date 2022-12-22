@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!--¡¡VERSIÓN!!-->
+        <!-- BOTóN -->
+        <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+        
+    </head>
+  
+    <body>
+        
+        <a-scene>
+            <a-entity cursor="rayOrigin: mouse" ></a-entity>
+
+            <a-gui-flex-container panel-color="blue" align-items="middle" flex-direction="row" position="0 2.5 -5" width="4" height="3" opacity="1">
+                <a-gui-button value="AUDIO" onclick="sound.play()" border-color="red" margin="0 0.15 0 0.2"></a-gui-button>
+                <script type="text/javascript">
+                    var sound = new Audio();
+                    sound.src = "./audio.mp3";
+                </script>
+
+                <a-gui-button value="1" border-color="red" onclick="alert('1 OK')" margin="0 0.15 0 0.15"></a-gui-button>
+
+                <a-gui-button value="2" border-color="red" onclick="alert('2 OK')" margin="0 0.2 0 0.15"></a-gui-button>
+
+            </a-gui-flex-container>
+
+              
+        </a-scene>
+
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <!-- Ctrl + Shift + v  ==  PREVIEW -->
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        
+        <style type="text/css">
+            #audioButton{
+                width: 200px;
+                height: 70px;
+            }
+        </style>
+    </head>
+  
+    <body>
+        <!-- <button id="audioButton" onclick="sound.play()">AUDIO</button>
+        <script type="text/javascript">
+            var sound = new Audio();
+            sound.src = "./audio.mp3";
+        </script>  -->
+        
+        <a-scene>
+            <button id="audioButton" onclick="sound.play()">AUDIO</button>
+            <script type="text/javascript">
+                var sound = new Audio();
+                sound.src = "./audio.mp3";
+            </script>
+
+            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        </a-scene>
+
+    </body>
+</html>

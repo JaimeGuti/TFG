@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>        
+    </head>
+  
+    <body>
+        <script>
+            AFRAME.registerComponent('color-click', {
+                schema: {
+                    width: {default: 1},
+                    height: {default: 1},
+                    depth: {default: 1},
+                    color: {default: '#AAA'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+            
+                    el.addEventListener('mousedown', function () {
+                        el.getObject3D('mesh').material.color = new THREE.Color(getRandomColor());
+                    });
+                }
+            });
+
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        </script>
+
+        <a-scene background="color: grey">
+            <a-entity cursor="rayOrigin: mouse" ></a-entity>
+
+            <a-entity color-click="width: 2.5; height: 1.25; depth: 1; color: orange" position="0 0 -5"></a-entity>
+
+        </a-scene>
+
+    </body>
+</html>

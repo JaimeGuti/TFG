@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <!-- BOTóN -->
+        <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+        
+    </head>
+  
+    <body>
+
+      <script type="text/javascript">
+      
+        AFRAME.registerComponent('start',{
+            init: function(){
+              this.aCanvas = document.getElementById('myCanvas');
+              this.ctx = aCanvas.getContext("2d");
+              this.ctx.beginPath();
+              /* this.ctx.fillText("HOLA MUNDO", 25, 25); 
+              this.ctx.fill(); */
+              // LÍNEAS EJES
+              //EJE X
+              for(x=0; x<400; x += 10) { // 360 steps for entire sine period
+                this.ctx.moveTo(x+5,180);  // línea discontinua STARTING POINT
+                this.ctx.lineTo(x,180);  // ENDING POINT
+              }
+              //EJE Y
+              for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                this.ctx.moveTo(20,y+10);  // línea discontinua STARTING POINT
+                this.ctx.lineTo(20,y);  // dibujar ENDING POINT
+              }
+
+              // SIGNAL
+              this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+                
+              for(x=0; x<=360; x+=1) {
+                //  DESPLAZAMIENTO             FREC AMPLITUD
+                y = 180.0 - Math.sin(x*Math.PI/90)*120;
+                this.ctx.lineTo(x+20,y); // dibujar
+              }
+              this.ctx.stroke(); // trazar en el canvas
+            },
+        });
+      </script>
+
+      <a-scene background="color: grey" start>
+
+        <a-entity cursor="rayOrigin: mouse" ></a-entity>
+
+        <a-assets>
+            <canvas id="aCanvas" height="400" width="400"></canvas>
+        </a-assets>
+
+        <a-gui-button value="SENO" onClick="changeSignal(Math.sin)" position="-1.5 -1 -5"></a-gui-button>
+        <a-gui-button value="COSENO" onClick="changeSignal(Math.cos)" position="0 -1 -5"></a-gui-button>
+        <a-gui-button value="SEÑAL" onclick="actualSignal()" position="1.5 -1 -5"></a-gui-button>
+
+        <a-plane position="0 2.5 -5" material="src:#aCanvas" width="8" height="4"></a-plane>
+
+      </a-scene>
+
+    </body>
+</html>
