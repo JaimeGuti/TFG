@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> 
+        <script src="./pruebaPulso.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script> <!-- Paisaje -->
+        
+    </head>
+  
+    <body>
+
+        <a-scene background="color: grey">
+            <a-entity  movement-controls="fly: true" position="5 3 10" wasd-controls="acceleration: 60">
+                <a-entity camera position="0 3 0" look-controls></a-entity>
+                <a-entity cursor="rayOrigin: mouse" ></a-entity>
+                <a-entity laser-control="hand: rigth"></a-entity>
+                <a-entity environment="preset: default"></a-entity> <!-- default, starry, moon -->
+            </a-entity>
+
+            <a-assets>
+                <canvas id="pulsecanvas"></canvas>
+                <canvas id="despcanvas"></canvas>
+                <canvas id="scaledcanvas"></canvas>
+                <canvas id="invcanvas"></canvas>
+                <canvas id="highcanvas"></canvas>
+                <canvas id="negcanvas"></canvas>
+
+                <canvas id="numcanvas"></canvas>
+                <canvas id="score"></canvas>
+                <canvas id="trycanvas"></canvas>
+            </a-assets>
+                        
+            <a-entity   material = "src: #pulsecanvas" position="0 4 -5" geometry="primitive: box" 
+                        draw-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="6 20 -5" geometry="primitive: box" 
+                        desp-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="6 15 -5" geometry="primitive: box" 
+                        scaled-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="6 10 -5" geometry="primitive: box" 
+                        inv-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="6 5 -5" geometry="primitive: box" 
+                        high-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #negcanvas" position="15 5 -5" geometry="primitive: box" 
+                        neg-pulse>
+            </a-entity>
+
+<!--             <a-entity   id="display" material = "src: #numcanvas" position="12 8 -5" geometry="primitive: box"
+                        material="color: teal" text="color: black; align: center; value: 1; width: 5" 
+                        give-num>
+            </a-entity>
+
+            <a-entity   position="6 8 -5" geometry="primitive: box" material="src: #score"
+                        score-counter>
+            </a-entity>
+
+            <a-entity   position="11 0 -5" geometry="primitive: box" material="src: #numcanvas"
+                        draw-num>
+            </a-entity> -->
+
+        </a-scene>
+
+    </body>
+</html>

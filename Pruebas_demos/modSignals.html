@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="./Sine.js"></script>
+        <script src="./Cosine.js"></script>
+        <script src="./Step.js"></script>
+        <script src="./Pulse.js"></script>
+        <script src="./Signal_1.js"></script>
+        <script src="./Signal_2.js"></script>
+        <script src="./Signal_3.js"></script>
+        <script src="./Signal_4.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script> <!-- Cam movement -->
+        
+    </head>
+  
+    <body>
+
+        <a-scene background="color: grey">
+            <a-entity  movement-controls="fly: true" position="10 -5 30" wasd-controls="acceleration: 60">
+                <a-entity camera position="0 0 0" look-controls></a-entity>
+                <a-entity cursor="rayOrigin: mouse" ></a-entity>
+                <a-entity laser-control="hand: rigth"></a-entity>
+            </a-entity>
+
+            <a-assets>
+                <canvas id="sinecanvas"></canvas>
+                <canvas id="coscanvas"></canvas>
+                <canvas id="stepcanvas"></canvas>
+                <canvas id="pulsecanvas"></canvas>
+                <canvas id="signal1canvas"></canvas>
+                <canvas id="signal2canvas"></canvas>
+                <canvas id="signal3canvas"></canvas>
+                <canvas id="signal4canvas"></canvas>
+                <!-- OPERATIONS -->
+                <canvas id="despcanvas"></canvas>
+                <canvas id="scaledcanvas"></canvas>
+                <canvas id="invcanvas"></canvas>
+                <canvas id="highcanvas"></canvas>
+                <canvas id="freccanvas"></canvas>
+            </a-assets>
+
+            <!-- SENO -->
+            <a-entity   material = "src: #sinecanvas" position="-16 3 -5" geometry="primitive: box" 
+                        draw-sen>
+                        <a-text text="align: center; width: 8; value: SENO; color: red" position="-2 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="-10 11 -5" geometry="primitive: box" 
+                        desp-sen>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="-10 7 -5" geometry="primitive: box" 
+                        scaled-sen>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="-10 3 -5" geometry="primitive: box" 
+                        inv-sen>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="-10 -1 -5" geometry="primitive: box" 
+                        high-sen>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #freccanvas" position="-10 -5 -5" geometry="primitive: box" 
+                        frec-sen>
+                        <a-text text="align: center; width: 8; value: FRECUENCIA; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- COSENO -->
+            <a-entity   material = "src: #coscanvas" position="-2 3 -5" geometry="primitive: box" 
+                        draw-cos>
+                        <a-text text="align: center; width: 8; value: COSENO; color: red" position="-1.75 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="4 11 -5" geometry="primitive: box" 
+                        desp-cos>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="4 7 -5" geometry="primitive: box" 
+                        scaled-cos>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="4 3 -5" geometry="primitive: box" 
+                        inv-cos>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="4 -1 -5" geometry="primitive: box" 
+                        high-cos>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #freccanvas" position="4 -5 -5" geometry="primitive: box" 
+                        frec-cos>
+                        <a-text text="align: center; width: 8; value: FRECUENCIA; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- STEP -->
+            <a-entity   material = "src: #stepcanvas" position="12 3 -5" geometry="primitive: box" 
+                        draw-step>
+                        <a-text text="align: center; width: 8; value: ESCALON; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="18 9 -5" geometry="primitive: box" 
+                        desp-step>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="18 5 -5" geometry="primitive: box" 
+                        scaled-step>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="18 1 -5" geometry="primitive: box" 
+                        inv-step>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="18 -3 -5" geometry="primitive: box" 
+                        high-step>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+                        
+            <!-- PULSE -->
+            <a-entity   material = "src: #pulsecanvas" position="26 3 -5" geometry="primitive: box" 
+                        draw-pulse>
+                        <a-text text="align: center; width: 8; value: PULSO; color: red" position="-1.75 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="32 9 -5" geometry="primitive: box" 
+                        desp-pulse>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="32 5 -5" geometry="primitive: box" 
+                        scaled-pulse>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="32 1 -5" geometry="primitive: box" 
+                        inv-pulse>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="32 -3 -5" geometry="primitive: box" 
+                        high-pulse>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- SIGNAL 1 -->
+            <a-entity   material = "src: #signal1canvas" position="-16 -19 -5" geometry="primitive: box" 
+                        draw-signal_1>
+                        <a-text text="align: center; width: 8; value: SIGNAL 1; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="-10 -13 -5" geometry="primitive: box" 
+                        desp-signal_1>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="-10 -17 -5" geometry="primitive: box" 
+                        scaled-signal_1>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="-10 -21 -5" geometry="primitive: box" 
+                        inv-signal_1>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="-10 -25 -5" geometry="primitive: box" 
+                        high-signal_1>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- SIGNAL 2 -->
+            <a-entity   material = "src: #signal2canvas" position="-2 -19 -5" geometry="primitive: box" 
+                        draw-signal_2>
+                        <a-text text="align: center; width: 8; value: SIGNAL 2; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="4 -13 -5" geometry="primitive: box" 
+                        desp-signal_2>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="4 -17 -5" geometry="primitive: box" 
+                        scaled-signal_2>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="4 -21 -5" geometry="primitive: box" 
+                        inv-signal_2>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="4 -25 -5" geometry="primitive: box" 
+                        high-signal_2>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- SIGNAL 3 -->
+            <a-entity   material = "src: #signal3canvas" position="12 -19 -5" geometry="primitive: box" 
+                        draw-signal_3>
+                        <a-text text="align: center; width: 8; value: TRIANGLE; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="18 -13 -5" geometry="primitive: box" 
+                        desp-signal_3>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="18 -17 -5" geometry="primitive: box" 
+                        scaled-signal_3>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="18 -21 -5" geometry="primitive: box" 
+                        inv-signal_3>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="18 -25 -5" geometry="primitive: box" 
+                        high-signal_3>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <!-- SIGNAL 4 -->
+            <a-entity   material = "src: #signal4canvas" position="26 -19 -5" geometry="primitive: box" 
+                        draw-signal_4>
+                        <a-text text="align: center; width: 8; value: SIGNAL 4; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #despcanvas" position="32 -13 -5" geometry="primitive: box" 
+                        desp-signal_4>
+                        <a-text text="align: center; width: 8; value: DESPLAZAMIENTO; color: red" position="-1 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #scaledcanvas" position="32 -17 -5" geometry="primitive: box" 
+                        scaled-signal_4>
+                        <a-text text="align: center; width: 8; value: ESCALADO; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #invcanvas" position="32 -21 -5" geometry="primitive: box" 
+                        inv-signal_4>
+                        <a-text text="align: center; width: 8; value: INVERSION; color: red" position="-1.5 -1.25 1"></a-text>
+            </a-entity>
+
+            <a-entity   material = "src: #highcanvas" position="32 -25 -5" geometry="primitive: box" 
+                        high-signal_4>
+                        <a-text text="align: center; width: 8; value: ALTURA; color: red" position="-1.7 -1.25 1"></a-text>
+            </a-entity>
+
+        </a-scene>
+
+    </body>
+</html>

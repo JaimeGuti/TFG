@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script> 
+        
+    </head>
+  
+    <body>
+        <script>
+           AFRAME.registerComponent('draw-sen', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'blue'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+            
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#firstcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+/*                         this.ctx.beginPath();
+                        this.ctx.rect(0, 0, 1000, 1000);
+                        this.ctx.fillStyle = 'red';
+                        this.ctx.fill();
+ */
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(0,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(0,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=360; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            y = desplazamiento_y - Math.sin(x*Math.PI/ frec )*ampli;
+                                                                //"zoom"
+                            this.ctx.lineTo(x-desplazamiento_x, y/2.5); // dibujar
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-cos', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'red'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+            
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#secondcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+/*                         this.ctx.beginPath();
+                        this.ctx.rect(0, 0, 1000, 1000);
+                        this.ctx.fillStyle = 'red';
+                        this.ctx.fill();
+ */
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(0,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(0,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=360; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            y = desplazamiento_y - Math.cos(x*Math.PI/ frec )*ampli;
+                                                                //"zoom"
+                            this.ctx.lineTo(x-desplazamiento_x, y/2.5); // dibujar
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-step', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'yellow'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#thirdcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(50,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(50,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=400; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            var mod_desp = 0;
+                               
+                            y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+
+                            if (x < 50 + mod_desp) {
+                                this.ctx.lineTo(x, 72);    
+                            }
+                            if ((x >= 50) + mod_desp) {
+                                this.ctx.lineTo(x, y/5);
+                            }
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-pulse', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'green'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#fourthcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(50,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(50,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=400; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            var mod_desp = 0;
+                               
+                            y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+
+                            if (x < 50 + mod_desp) {
+                                this.ctx.lineTo(x, 72);    
+                            }
+                            if ((x >= 50)&&(x<=100) + mod_desp) {
+                                this.ctx.lineTo(x, y/5);
+                            }
+                            if (x > 100 + mod_desp) {
+                                this.ctx.lineTo(x, 72);
+                            }
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-signal_1', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'black'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#fifthcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(50,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(50,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=400; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            var mod_desp = 0;
+                               
+                            y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+
+                            if (x < 50 + mod_desp) {
+                                this.ctx.lineTo(x, 72);    
+                            }
+                            if ((x >= 50)&&(x<=100) + mod_desp) {
+                                this.ctx.lineTo(x, y/5);
+                            }
+                            if (x > 130 + mod_desp) {
+                                this.ctx.lineTo(x, 72);
+                            }
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-signal_2', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'purple'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#sixthcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(50,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(50,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=400; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            var mod_desp = 0;
+                               
+                            y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+
+                            if (x < 30 + mod_desp) {
+                                this.ctx.lineTo(x, 72);    
+                            }
+                            if ((x >= 50)&&(x<=100) + mod_desp) {
+                                this.ctx.lineTo(x, y/5);
+                            }
+                            if (x > 120 + mod_desp) {
+                                this.ctx.lineTo(x, 72);
+                            }
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+            AFRAME.registerComponent('draw-signal_3', {
+                schema: {
+                    width: {default: 5},
+                    height: {default: 3},
+                    depth: {default: 2},
+                    color: {default: 'orange'}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+
+                    this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
+                    this.material = new THREE.MeshStandardMaterial({color: data.color});
+                    this.mesh = new THREE.Mesh(this.geometry, this.material);
+                    el.setObject3D('mesh', this.mesh);
+
+                    el.addEventListener('mousedown', function () {
+                        // console.log("CLICK");
+
+                        this.canvas = document.querySelector("#seventhcanvas");
+                        this.ctx = this.canvas.getContext('2d');
+
+                        // LÍNEAS EJES
+                        //EJE X
+                        for(x=0; x<400; x += 18) { // 360 steps for entire sine period
+                            this.ctx.moveTo(x+5,72);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(x,72);  // ENDING POINT
+                        }
+                        //EJE Y
+                        for(y=0; y<400; y += 20) { // 360 steps for entire sine period
+                            this.ctx.moveTo(50,y+5);  // línea discontinua STARTING POINT
+                            this.ctx.lineTo(50,y);  // dibujar ENDING POINT
+                        }
+
+                        // SIGNAL
+                        this.ctx.moveTo(0,180);  // volver a la izq para dibujar sinusoide
+
+                        for(x=0; x<=400; x+=1) {
+                            var desplazamiento_y = 180;
+                            var frec = 90;
+                            var ampli = 120;
+                            var desplazamiento_x = 0.0;
+                            var mod_desp = 0;
+                               
+                            y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+
+                            if (x < 50 + mod_desp) {
+                                this.ctx.lineTo(x, 72);    
+                            }
+                            if ((x >= 100)&&(x <= 100) + mod_desp) {
+                                this.ctx.lineTo(x, y/5);
+                            }
+                            if (x > 150 + mod_desp) {
+                                this.ctx.lineTo(x, 72);
+                            }
+                        }
+                        this.ctx.stroke(); // trazar en el canvas
+
+                        this.texture = new THREE.Texture(this.canvas) 
+                        this.texture.needsUpdate = true;
+                        this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+                        this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+                        el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+                    });
+                }
+            });
+
+        </script>
+
+        <a-scene background="color: grey">
+            <a-entity cursor="rayOrigin: mouse" ></a-entity>
+
+            <a-assets>
+                <canvas id="firstcanvas"></canvas>
+                <canvas id="secondcanvas"></canvas>
+                <canvas id="thirdcanvas"></canvas>
+                <canvas id="fourthcanvas"></canvas>
+                <canvas id="fifthcanvas"></canvas>
+                <canvas id="sixthcanvas"></canvas>
+                <canvas id="seventhcanvas"></canvas>
+            </a-assets>
+
+            <a-entity   material = "src: #firstcanvas" 
+                        position="-3 3 -5" 
+                        geometry="primitive: box" 
+                        draw-sen>
+            </a-entity>
+
+            <a-entity   material = "src: #secondcanvas" 
+                        position="3 3 -5" 
+                        geometry="primitive: box" 
+                        draw-cos>
+            </a-entity>
+
+            <a-entity   material = "src: #thirdcanvas" 
+                        position="-3 -1 -5" 
+                        geometry="primitive: box" 
+                        draw-step>
+            </a-entity>
+                        
+            <a-entity   material = "src: #fourthcanvas" 
+                        position="3 -1 -5" 
+                        geometry="primitive: box" 
+                        draw-pulse>
+            </a-entity>
+
+            <a-entity   material = "src: #fifthcanvas" 
+                        position="-3 -5 -5" 
+                        geometry="primitive: box" 
+                        draw-signal_1>
+            </a-entity>
+
+            <a-entity   material = "src: #sixthcanvas" 
+                        position="3 -5 -5" 
+                        geometry="primitive: box" 
+                        draw-signal_2>
+            </a-entity>
+
+            <a-entity   material = "src: #seventhcanvas" 
+                        position="9 -5 -5" 
+                        geometry="primitive: box" 
+                        draw-signal_3>
+            </a-entity>
+
+        </a-scene>
+
+    </body>
+</html>
