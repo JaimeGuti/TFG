@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="./DrawSine.js"></script>
+        <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script> Cam movement -->
+        <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script> ¿Movement controls? -->
+        <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script> <!-- Scene -->
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script> <!-- Super Hands -->
+        <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script> <!-- Super Hands -->
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script> <!-- DE SUPERHANDS -->
+    </head>
+  
+    <body>
+
+        <a-scene>
+            <a-entity environment="preset: default"></a-entity> <!-- default, starry, moon -->
+            
+            <a-entity  movement-controls="fly: true" position="0 0 0" wasd-controls="acceleration: 80: fly: false">
+                <a-entity camera class="camera" position="0 0 0" look-controls></a-entity>
+                <a-entity cursor="rayOrigin: mouse" ></a-entity>
+                <!-- <a-entity oculus-go-controls></a-entity> -->
+                <!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->  
+                <a-entity sphere-collider="objects: .moveseno" super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: .moveseno" super-hands hand-controls="hand: right"></a-entity>               
+            </a-entity>
+
+            <a-assets>
+                <canvas id="sinecanvas"></canvas>
+            </a-assets>
+
+            <!-- SENO -->
+            <a-entity   material = "src: #sinecanvas" position="0 1.5 -1.5" geometry="primitive: box"
+                        class="moveseno" hoverable grabbable stretchable draggable dropppable 
+                        draw-sen>
+                    <a-text text="align: center; width: 8; value: SENO; color: red" position="-3 -1.8 0.5"></a-text>
+            </a-entity>
+
+        </a-scene>
+
+    </body>
+</html>

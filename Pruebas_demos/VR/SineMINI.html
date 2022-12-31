@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="./SineMINI.js"></script>
+        <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script> Cam movement -->
+        <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script> ¿Movement controls? -->
+        <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script> <!-- Scene -->
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script> <!-- Super Hands -->
+        <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script> <!-- Super Hands -->
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script> <!-- DE SUPERHANDS -->
+        <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script> <!-- JOYSTICK. -->
+    </head>
+  
+    <body>
+
+        <a-scene>
+            <a-entity environment="preset: default"></a-entity> <!-- default, starry, moon -->
+            
+            <a-entity id="rig" movement-controls="fly: true" position="0 1 0" wasd-controls="acceleration: 80: fly: false">
+                <a-entity camera id="camera" position="0 1 0" look-controls></a-entity>
+                <a-entity cursor="rayOrigin: mouse" ></a-entity>
+                <!-- <a-entity oculus-go-controls></a-entity> -->
+                <!-- Joystick move -->
+                <a-entity oculus-touch-controls="hand: left" oculus-thumbstick-controls></a-entity>
+                <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+                <!-- Box move -->  
+                <a-entity sphere-collider="objects: .moveSeno" super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: .moveSeno" super-hands hand-controls="hand: right"></a-entity>
+                <a-entity sphere-collider="objects: .moveCoseno" super-hands hand-controls="hand: left"></a-entity>
+                <a-entity sphere-collider="objects: .moveCoseno" super-hands hand-controls="hand: right"></a-entity>
+            </a-entity>
+
+            <a-assets>
+                <canvas id="sinecanvas"></canvas>
+                <!-- OPERATIONS -->
+                <canvas id="despcanvas"></canvas>
+                <canvas id="scaledcanvas"></canvas>
+                <canvas id="invcanvas"></canvas>
+                <canvas id="highcanvas"></canvas>
+                <canvas id="freccanvas"></canvas>
+            </a-assets>
+
+            <!-- SENO -->
+            <a-entity   class="moveSeno" geometry="primitive: box; width: 10; height: 5; depth: 1" 
+                        position="0 3.5 -5" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0"
+                        hoverable grabbable stretchable draggable dropppable>
+
+                <a-entity   material = "src: #sinecanvas" position="-3.25 0 0" geometry="primitive: box"
+                            draw-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: SENO; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+
+                <a-entity   material = "src: #despcanvas" position="-1 0.625 0" geometry="primitive: box" 
+                            desp-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: DESPLAZAMIENTO; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+
+                <a-entity   material = "src: #scaledcanvas" position="-1 -0.625 0" geometry="primitive: box" 
+                            ampli-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: AMPLITUD; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+
+                <a-entity   material = "src: #invcanvas" position="1.25 0.625 0" geometry="primitive: box" 
+                            inv-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: INVERSION TEMPORAL; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+
+                <a-entity   material = "src: #highcanvas" position="1.25 -0.625 0" geometry="primitive: box" 
+                            high-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: ALTURA; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+
+                <a-entity   material = "src: #freccanvas" position="3.5 0.625 0" geometry="primitive: box" 
+                            frec-sen>
+                            <a-entity position="0.6 -0.4 0.15" text="value: FRECUENCIA; align: left; color: red" scale="3 3 3"></a-entity>
+                </a-entity>
+            
+            </a-entity>
+
+            <a-entity class="prueba" geometry="primitive: box" position="15 3.5 -0.5" material="color: lightgreen; transparent: false; opacity: 0"
+                hoverable grabbable stretchable draggable dropppable>
+
+                <a-entity geometry="primitive: box; width: 0.3; height: 0.3; depth: 0.3" 
+                        position="0 0 0" rotation="0 45 0" material="color: red"></a-entity>
+            
+            </a-entity>
+
+        </a-scene>
+
+    </body>
+</html>
