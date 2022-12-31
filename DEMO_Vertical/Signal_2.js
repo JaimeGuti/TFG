@@ -1,8 +1,8 @@
-var position_desp_signal_2 = '-23 25 -55';
-var position_scaled_signal_2 = '-23 20 -55';
-var position_inv_signal_2 = '-23 15 -55';
-var position_high_signal_2 = '-23 10 -55';
-var position_neg_signal_2 = '-23 5 -55';
+var position_desp_signal_2 = '-20 25 -54.5';
+var position_scaled_signal_2 = '-20 20 -54.5';
+var position_inv_signal_2 = '-20 15 -54.5';
+var position_high_signal_2 = '-20 10 -54.5';
+var position_neg_signal_2 = '-20 5 -54.5';
 
 AFRAME.registerComponent('draw-signal_2', {
     schema: {
@@ -357,10 +357,20 @@ AFRAME.registerComponent('scaled-signal_2', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
         });
     }
 });
@@ -507,10 +517,20 @@ AFRAME.registerComponent('inv-signal_2', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             count++;
         });
@@ -639,10 +659,20 @@ AFRAME.registerComponent('high-signal_2', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture }); 
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials); 
         });
     }
 });
@@ -652,7 +682,7 @@ AFRAME.registerComponent('neg-signal_2', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'green'}
+        color: {default: 'tomato'}
     },
 
     init: function () {
@@ -660,17 +690,7 @@ AFRAME.registerComponent('neg-signal_2', {
         var el = this.el;
 
         this.geometry = new THREE.BoxBufferGeometry(data.width, data.height, data.depth);
-        var materials = [
-            new THREE.MeshBasicMaterial( { color: 'black' } ), // right
-            new THREE.MeshBasicMaterial( { color: 'black' } ), // left
-            new THREE.MeshBasicMaterial( { color: 'black' } ), // top
-            new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
-            new THREE.MeshBasicMaterial( { color: 'tomato' } ), // back
-            new THREE.MeshBasicMaterial( { color: 'black' } )  // front
-        ];
-        // el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
-        // this.material = new THREE.MeshStandardMaterial({color: data.color});
-        this.material = new THREE.MultiMaterial(materials);
+        this.material = new THREE.MeshStandardMaterial({color: data.color});
         this.mesh = new THREE.Mesh(this.geometry, this.material);
         el.setObject3D('mesh', this.mesh);
 

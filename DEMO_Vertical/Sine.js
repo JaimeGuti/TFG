@@ -1,15 +1,15 @@
-var position_desp_sine = '-73 25 -5';
-var position_ampli_sine = '-73 20 -5';
-var position_inv_sine = '-73 15 -5';
-var position_high_sine = '-73 10 -5';
-var position_frec_sine = '-73 5 -5';
+var position_desp_sine = '-70 25 -4.5';
+var position_ampli_sine = '-70 20 -4.5';
+var position_inv_sine = '-70 15 -4.5';
+var position_high_sine = '-70 10 -4.5';
+var position_frec_sine = '-70 5 -4.5';
 
 AFRAME.registerComponent('draw-sen', {
     schema: {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'blue'}
+        color: {default: 'lightgreen'}
     },
 
     init: function () {
@@ -59,10 +59,20 @@ AFRAME.registerComponent('draw-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: '#ffd700' } ), // right
+                new THREE.MeshBasicMaterial( { color: '#ffd700' } ), // left
+                new THREE.MeshBasicMaterial( { color: '#ffd700' } ), // top
+                new THREE.MeshBasicMaterial( { color: '#ffd700' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: '#ffd700' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
         });
     }
 });
@@ -72,7 +82,7 @@ AFRAME.registerComponent('desp-sen', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'green'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -172,10 +182,20 @@ AFRAME.registerComponent('desp-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             mod_desp = 120;
         });
@@ -187,7 +207,7 @@ AFRAME.registerComponent('ampli-sen', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'yellow'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -294,10 +314,20 @@ AFRAME.registerComponent('ampli-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
         });
     }
 });
@@ -307,7 +337,7 @@ AFRAME.registerComponent('inv-sen', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'orange'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -420,10 +450,20 @@ AFRAME.registerComponent('inv-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             count++;
         });
@@ -535,10 +575,20 @@ AFRAME.registerComponent('high-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             desp_y = 180;
         });
@@ -550,7 +600,7 @@ AFRAME.registerComponent('frec-sen', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'tomato'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -659,10 +709,20 @@ AFRAME.registerComponent('frec-sen', {
 
             this.texture = new THREE.Texture(this.canvas) 
             this.texture.needsUpdate = true;
-            this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            var materials = [
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // right
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // left
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // top
+                new THREE.MeshBasicMaterial( { color: 'black' } ), // bottom
+                new THREE.MeshBasicMaterial( { map: this.texture } ), // back
+                new THREE.MeshBasicMaterial( { color: 'black' } )  // front
+            ];
+            // this.material = new THREE.MeshBasicMaterial({ map: this.texture });
+            this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             // frec = 90;
         });
