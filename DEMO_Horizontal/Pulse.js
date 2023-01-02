@@ -1,8 +1,8 @@
-var position_desp_pulse = '70 21 -35';
-var position_scaled_pulse = '70 7 -35';
-var position_inv_pulse = '80 21 -35';
-var position_high_pulse = '80 7 -35';
-var position_neg_pulse = '90 21 -35';
+var position_desp_pulse = '65 22 -34.5';
+var position_scaled_pulse = '65 8 -34.5';
+var position_inv_pulse = '75 22 -34.5';
+var position_high_pulse = '75 8 -34.5';
+var position_neg_pulse = '85 22 -34.5';
 
 AFRAME.registerComponent('draw-pulse', {
     schema: {

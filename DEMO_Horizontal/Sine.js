@@ -1,8 +1,8 @@
-var position_desp_sine = '-80 21 -5';
-var position_ampli_sine = '-80 7 -5';
-var position_inv_sine = '-70 21 -5';
-var position_high_sine = '-70 7 -5';
-var position_frec_sine = '-60 21 -5';
+var position_desp_sine = '-85 22 -4.5';
+var position_ampli_sine = '-85 8 -4.5';
+var position_inv_sine = '-75 22 -4.5';
+var position_high_sine = '-75 8 -4.5';
+var position_frec_sine = '-65 22 -4.5';
 
 AFRAME.registerComponent('draw-sen', {
     schema: {

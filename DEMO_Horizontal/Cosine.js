@@ -1,8 +1,8 @@
-var position_desp_cosine = '-30 21 -15';
-var position_ampli_cosine = '-30 7 -15';
-var position_inv_cosine = '-20 21 -15';
-var position_high_cosine = '-20 7 -15';
-var position_frec_cosine = '-10 21 -15';
+var position_desp_cosine = '-35 22 -14.5';
+var position_ampli_cosine = '-35 8 -14.5';
+var position_inv_cosine = '-25 22 -14.5';
+var position_high_cosine = '-25 8 -14.5';
+var position_frec_cosine = '-15 22 -14.5';
 
 AFRAME.registerComponent('draw-cos', {
     schema: {

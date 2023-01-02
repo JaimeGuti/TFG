@@ -1,8 +1,8 @@
-var position_desp_signal_4 = '70 21 -75';
-var position_scaled_signal_4 = '70 7 -75';
-var position_inv_signal_4 = '80 21 -75';
-var position_high_signal_4 = '80 7 -75';
-var position_neg_signal_4 = '90 21 -75';
+var position_desp_signal_4 = '65 22 -74.5';
+var position_scaled_signal_4 = '65 8 -74.5';
+var position_inv_signal_4 = '75 22 -74.5';
+var position_high_signal_4 = '75 8 -74.5';
+var position_neg_signal_4 = '85 22 -74.5';
 
 AFRAME.registerComponent('draw-signal_4', {
     schema: {
