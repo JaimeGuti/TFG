@@ -1,8 +1,8 @@
-var position_desp_cosine = '-30 21 -15';
-var position_ampli_cosine = '-30 7 -15';
-var position_inv_cosine = '-20 21 -15';
-var position_high_cosine = '-20 7 -15';
-var position_frec_cosine = '-10 21 -15';
+var position_desp_cosine = '14.5 5 -1.25';
+var position_ampli_cosine = '14.5 2 -1.25';
+var position_inv_cosine = '15.25 5 1';
+var position_high_cosine = '15.25 2 1';
+var position_frec_cosine = '16.2 5 3.5';
 
 AFRAME.registerComponent('draw-cos', {
     schema: {
@@ -143,9 +143,10 @@ AFRAME.registerComponent('desp-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_cosine);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 -70 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -164,8 +165,8 @@ AFRAME.registerComponent('desp-cos', {
             this.text.setAttribute('value', "y(t) = cos(x " + sign + " "  + randomNum + ")"); // ¡¡¡ CHANGE THIS !!!
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2 2 2');
+            this.text.setAttribute('position', '-0.45 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
@@ -267,9 +268,10 @@ AFRAME.registerComponent('ampli-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_ampli_cosine);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 -70 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -296,8 +298,8 @@ AFRAME.registerComponent('ampli-cos', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2 2 2');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
@@ -386,9 +388,10 @@ AFRAME.registerComponent('inv-cos', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_cosine);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 -70 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -397,8 +400,8 @@ AFRAME.registerComponent('inv-cos', {
                 this.text.setAttribute('value', "y(t) = cos(-x)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.8 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.45 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=360; x+=1) {
@@ -415,9 +418,10 @@ AFRAME.registerComponent('inv-cos', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_cosine);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 -70 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -426,8 +430,8 @@ AFRAME.registerComponent('inv-cos', {
                 this.text.setAttribute('value', "y(t) = cos(x)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.7 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.45 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=360; x+=1) {
@@ -531,9 +535,10 @@ AFRAME.registerComponent('high-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_cosine);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 -70 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -552,8 +557,8 @@ AFRAME.registerComponent('high-cos', {
             this.text.setAttribute('value', "y(t) = cos(x) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.9 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.45 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
@@ -655,10 +660,10 @@ AFRAME.registerComponent('frec-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_frec_cosine);
-            // this.box.setAttribute('rotation', "0 45 0");
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 -70 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -685,8 +690,8 @@ AFRAME.registerComponent('frec-cos', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {

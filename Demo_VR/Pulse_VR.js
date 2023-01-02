@@ -1,8 +1,8 @@
-var position_desp_pulse = '70 21 -35';
-var position_scaled_pulse = '70 7 -35';
-var position_inv_pulse = '80 21 -35';
-var position_high_pulse = '80 7 -35';
-var position_neg_pulse = '90 21 -35';
+var position_desp_pulse = '70 5 -35';
+var position_scaled_pulse = '70 2 -35';
+var position_inv_pulse = '80 5 -35';
+var position_high_pulse = '80 2 -35';
+var position_neg_pulse = '90 5 -35';
 
 AFRAME.registerComponent('draw-pulse', {
     schema: {
@@ -154,9 +154,9 @@ AFRAME.registerComponent('desp-pulse', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_pulse);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -294,9 +294,9 @@ AFRAME.registerComponent('scaled-pulse', { // ¡¡¡¡¡¡ CAMBIAR EL RESULTADO 
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_scaled_pulse);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -440,9 +440,9 @@ AFRAME.registerComponent('inv-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_pulse);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -485,9 +485,9 @@ AFRAME.registerComponent('inv-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_pulse);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -618,9 +618,9 @@ AFRAME.registerComponent('high-pulse', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_pulse);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -751,9 +751,9 @@ AFRAME.registerComponent('neg-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_pulse);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
@@ -793,9 +793,9 @@ AFRAME.registerComponent('neg-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_pulse);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');

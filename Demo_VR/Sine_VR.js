@@ -1,8 +1,8 @@
 var position_desp_sine = '-1 5 -5';
-var position_ampli_sine = '0 7 -5';
-var position_inv_sine = '10 21 -5';
-var position_high_sine = '10 7 -5';
-var position_frec_sine = '20 21 -5';
+var position_ampli_sine = '-1 2 -5';
+var position_inv_sine = '1.25 5 -5';
+var position_high_sine = '1.25 2 -5';
+var position_frec_sine = '3.5 5 -5';
 
 AFRAME.registerComponent('draw-sen', {
     schema: {
@@ -268,9 +268,9 @@ AFRAME.registerComponent('ampli-sen', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_ampli_sine);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -297,8 +297,8 @@ AFRAME.registerComponent('ampli-sen', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2 2 2');
+            this.text.setAttribute('position', '-0.4 0 0.25');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
@@ -389,9 +389,9 @@ AFRAME.registerComponent('inv-sen', {
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_sine);
                 // this.box.setAttribute('rotation', "0 45 0");
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -419,10 +419,10 @@ AFRAME.registerComponent('inv-sen', {
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_sine);
                 // this.box.setAttribute('rotation', "0 45 0");
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -537,9 +537,9 @@ AFRAME.registerComponent('high-sen', {
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_sine);
             // this.box.setAttribute('rotation', "0 45 0");
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -663,9 +663,9 @@ AFRAME.registerComponent('frec-sen', {
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_frec_sine);
             // this.box.setAttribute('rotation', "0 45 0");
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         

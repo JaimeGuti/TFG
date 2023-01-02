@@ -1,8 +1,8 @@
-var position_desp_signal_1 = '-80 21 -45';
-var position_scaled_signal_1 = '-80 7 -45';
-var position_inv_signal_1 = '-70 21 -45';
-var position_high_signal_1 = '-70 7 -45';
-var position_neg_signal_1 = '-60 21 -45';
+var position_desp_signal_1 = '1 5 30';
+var position_scaled_signal_1 = '1 2 30';
+var position_inv_signal_1 = '-1.25 5 30';
+var position_high_signal_1 = '-1.25 2 30';
+var position_neg_signal_1 = '-3.5 5 30';
 
 AFRAME.registerComponent('draw-signal_1', {
     schema: {
@@ -153,9 +153,10 @@ AFRAME.registerComponent('desp-signal_1', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_signal_1);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 180 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -174,8 +175,8 @@ AFRAME.registerComponent('desp-signal_1', {
             this.text.setAttribute('value', "y(t) = x(t" + sign + randomNum + "to)");
             this.text.setAttribute('color', 'red');
             // this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.7 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
@@ -287,9 +288,10 @@ AFRAME.registerComponent('scaled-signal_1', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_scaled_signal_1);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 180 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -323,8 +325,8 @@ AFRAME.registerComponent('scaled-signal_1', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '3 3 3');
+            this.text.setAttribute('position', '-0.42 0 0.1');
+            this.text.setAttribute('scale', '0.75 0.75 0.75');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
@@ -436,9 +438,10 @@ AFRAME.registerComponent('inv-signal_1', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_signal_1);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 180 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -447,8 +450,8 @@ AFRAME.registerComponent('inv-signal_1', {
                 this.text.setAttribute('value', "y(t) = x(-t)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.6 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
@@ -476,9 +479,10 @@ AFRAME.registerComponent('inv-signal_1', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_signal_1);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 180 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.scene.appendChild(this.box);
                             
@@ -487,8 +491,8 @@ AFRAME.registerComponent('inv-signal_1', {
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.55 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
                 
                 for(x=0; x<=400; x+=1) {
@@ -603,9 +607,10 @@ AFRAME.registerComponent('high-signal_1', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_signal_1);
-            this.box.setAttribute('width','4px');
-            this.box.setAttribute('height','2px');
-            this.box.setAttribute('depth','0.5px');
+            this.box.setAttribute('rotation', '0 180 0');
+            this.box.setAttribute('width','1px');
+            this.box.setAttribute('height','0.5px');
+            this.box.setAttribute('depth','0.15px');
             this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
             this.scene.appendChild(this.box);
                         
@@ -624,8 +629,8 @@ AFRAME.registerComponent('high-signal_1', {
             this.text.setAttribute('value', "y(t) = x(t) " + signo + " " + randomNum);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2.5 2.5 2.5');
+            this.text.setAttribute('position', '-0.42 0 0.1');
+            this.text.setAttribute('scale', '0.6 0.6 0.6');
             this.box.appendChild(this.text);
 
 /*             if (mod_inv != 0) {
@@ -730,9 +735,10 @@ AFRAME.registerComponent('neg-signal_1', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_signal_1);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 180 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
@@ -744,8 +750,8 @@ AFRAME.registerComponent('neg-signal_1', {
                 this.text.setAttribute('value', "y(t) = -x(t)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.6 0 0.25');
-                this.text.setAttribute('scale', '3.25 3.25 3.25');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
@@ -772,9 +778,10 @@ AFRAME.registerComponent('neg-signal_1', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_signal_1);
-                this.box.setAttribute('width','4px');
-                this.box.setAttribute('height','2px');
-                this.box.setAttribute('depth','0.5px');
+                this.box.setAttribute('rotation', '0 180 0');
+                this.box.setAttribute('width','1px');
+                this.box.setAttribute('height','0.5px');
+                this.box.setAttribute('depth','0.15px');
                 this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
@@ -786,8 +793,8 @@ AFRAME.registerComponent('neg-signal_1', {
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.5 0 0.25');
-                this.text.setAttribute('scale', '3.25 3.25 3.25');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
