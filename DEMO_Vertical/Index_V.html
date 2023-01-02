@@ -14,8 +14,6 @@
         <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.1/dist/aframe-extras.min.js"></script> <!-- Cam movement -->
         <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script> <!-- Scene -->
         <script src="https://unpkg.com/aframe-slice9-component/dist/aframe-slice9-component.min.js"></script>
-        <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv=”Content-Type” content=”text/html; charset=ISO-8859-1″ /> -->
     </head>
   
     <body>
@@ -47,7 +45,13 @@
                 <canvas id="negcanvas"></canvas>
             </a-assets>
 
-        
+            <!-- <a-plane    position="-85 15 -7" rotation="0 0 0" width="30" height="30" color="grey" opacity="0.75" 
+                        animation="property: color; dir: alternate; dur: 1000; easing: easeInSine; loop: true; to: #5F5"
+                        animation_pos="property: position; dir: alternate; dur: 2000; loop: true; from: -20 10 45; to: -20 12 49"
+                        animation="property: rotation; dir: alternate; dur: 2000; loop: true; from: 0 0 0; to: 0 360 0; repeat: indefinite"
+                        animation_color="property: material.color; dir: alternate; dur: 2000; loop: true; from: #aaa; to: #5F5"
+                        animation_scale="property: scale; dir: alternate; dur: 200; easing: easeInSine; loop: true; to: 1.2 1 1.2">
+            </a-plane> -->
             <!-- INSTRUCTIONS -->
             <a-entity   text="color: #4ef580; align: center; width: 10 ;value: INSTRUCCIONES:\n\n Cada click en las cajas de transformaciones, 
                             realiza la operaci&oacute;OOn indicada en la parte inferior sobre la se&ntilde;NNal original mostrada a la izquierda.\n
@@ -56,12 +60,11 @@
                         animation="dir: alternate; dur: 5000; easing: easeInOutCubic; property: object3D.position.y; from: 10; to: 14; loop: true">
             </a-entity>
 
-            
             <!-- SINE -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="-80 15 -5" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME SINE -->
-                <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.95" material="color: #ffd700; opacity: 1" position="-7.5 0 0"
+                <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700; opacity: 1" position="-7.5 0 0"
                             animation="property: material.opacity; dir: alternate; dur: 1500; easing: easeInSine; loop: true; begin: fade; to: 0.15">
                 </a-entity>
 
@@ -98,7 +101,7 @@
 
 
             <!-- COSINE -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="-30 15 -15" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME COSINE -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700; opacity: 1" position="-7.5 0 0"
@@ -138,7 +141,7 @@
 
             
             <!-- STEP -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="20 15 -25" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME STEP -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
@@ -178,7 +181,7 @@
 
 
             <!-- PULSE -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="70 15 -35" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME PULSE -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
@@ -218,7 +221,7 @@
 
 
             <!-- SIGNAL 1 -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="-80 15 -45" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME SIGNAL 1 -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
@@ -258,7 +261,7 @@
 
 
             <!-- SIGNAL 2 -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="-30 15 -55" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME SIGNAL 2 -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
@@ -298,7 +301,7 @@
 
 
             <!-- SIGNAL 3 -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="20 15 -65" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME SIGNAL 3 -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
@@ -338,7 +341,7 @@
 
 
             <!-- SIGNAL 4 -->
-            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.95" 
+            <a-entity   geometry="primitive: box; width: 26; height: 26; depth: 0.9" 
                         position="70 15 -75" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15">
                 <!-- FRAME SIGNAL 4 -->
                 <a-entity   geometry="width: 9.5;  height: 5;  depth: 0.9" material="color: #ffd700" position="-7.5 0 0"
