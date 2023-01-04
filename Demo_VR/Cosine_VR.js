@@ -1,8 +1,8 @@
-var position_desp_cosine = '14.5 5 -1.25';
-var position_ampli_cosine = '14.5 2 -1.25';
-var position_inv_cosine = '15.25 5 1';
-var position_high_cosine = '15.25 2 1';
-var position_frec_cosine = '16.2 5 3.5';
+var position_desp_cosine = '6.5 5 -17.25';
+var position_ampli_cosine = '6.5 2 -17.25';
+var position_inv_cosine = '8.75 5 -17.25';
+var position_high_cosine = '8.75 2 -17.25';
+var position_frec_cosine = '11 5 -17.25';
 
 AFRAME.registerComponent('draw-cos', {
     schema: {
@@ -143,7 +143,7 @@ AFRAME.registerComponent('desp-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_cosine);
-            this.box.setAttribute('rotation', '0 -70 0');
+            // this.box.setAttribute('rotation', '0 -70 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -268,7 +268,7 @@ AFRAME.registerComponent('ampli-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_ampli_cosine);
-            this.box.setAttribute('rotation', '0 -70 0');
+            // this.box.setAttribute('rotation', '0 -70 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -388,7 +388,7 @@ AFRAME.registerComponent('inv-cos', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_cosine);
-                this.box.setAttribute('rotation', '0 -70 0');
+                // this.box.setAttribute('rotation', '0 -70 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -418,7 +418,7 @@ AFRAME.registerComponent('inv-cos', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_cosine);
-                this.box.setAttribute('rotation', '0 -70 0');
+                // this.box.setAttribute('rotation', '0 -70 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -535,7 +535,7 @@ AFRAME.registerComponent('high-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_cosine);
-            this.box.setAttribute('rotation', '0 -70 0');
+            // this.box.setAttribute('rotation', '0 -70 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -660,7 +660,7 @@ AFRAME.registerComponent('frec-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_frec_cosine);
-            this.box.setAttribute('rotation', '0 -70 0');
+            // this.box.setAttribute('rotation', '0 -70 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');

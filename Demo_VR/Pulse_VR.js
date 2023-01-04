@@ -1,8 +1,8 @@
-var position_desp_pulse = '70 5 -35';
-var position_scaled_pulse = '70 2 -35';
-var position_inv_pulse = '80 5 -35';
-var position_high_pulse = '80 2 -35';
-var position_neg_pulse = '90 5 -35';
+var position_desp_pulse = '17.25 5 6.5';
+var position_scaled_pulse = '17.25 2 6.5';
+var position_inv_pulse = '17.25 5 8.75';
+var position_high_pulse = '17.25 2 8.75';
+var position_neg_pulse = '17.25 5 11';
 
 AFRAME.registerComponent('draw-pulse', {
     schema: {
@@ -154,6 +154,7 @@ AFRAME.registerComponent('desp-pulse', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_pulse);
+            this.box.setAttribute('rotation', '0 -90 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -175,8 +176,8 @@ AFRAME.registerComponent('desp-pulse', {
             this.text.setAttribute('value', "y(t) = x(t" + sign + randomNum + "to)");
             this.text.setAttribute('color', 'red');
             // this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.7 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.55 0.55 0.55');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
@@ -294,6 +295,7 @@ AFRAME.registerComponent('scaled-pulse', { // ¡¡¡¡¡¡ CAMBIAR EL RESULTADO 
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_scaled_pulse);
+            this.box.setAttribute('rotation', '0 -90 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -323,8 +325,8 @@ AFRAME.registerComponent('scaled-pulse', { // ¡¡¡¡¡¡ CAMBIAR EL RESULTADO 
             this.texto.setAttribute('value', result);
             this.texto.setAttribute('color', 'red');
             //this.texto.setAttribute('position', 'center');
-            this.texto.setAttribute('position', '-1.8 0 0.25');
-            this.texto.setAttribute('scale', '3 3 3');
+            this.texto.setAttribute('position', '-0.4 0 0.1');
+            this.texto.setAttribute('scale', '0.7 0.7 0.7');
             this.box.appendChild(this.texto);            
 
             for(x=0; x<=400; x+=1) {
@@ -440,6 +442,7 @@ AFRAME.registerComponent('inv-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_pulse);
+                this.box.setAttribute('rotation', '0 -90 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -451,8 +454,8 @@ AFRAME.registerComponent('inv-pulse', {
                 this.text.setAttribute('value', "y(t) = x(-t)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.6 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
@@ -485,6 +488,7 @@ AFRAME.registerComponent('inv-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_pulse);
+                this.box.setAttribute('rotation', '0 -90 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -496,8 +500,8 @@ AFRAME.registerComponent('inv-pulse', {
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.55 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
@@ -618,6 +622,7 @@ AFRAME.registerComponent('high-pulse', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_pulse);
+            this.box.setAttribute('rotation', '0 -90 0');
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
@@ -639,8 +644,8 @@ AFRAME.registerComponent('high-pulse', {
             this.text.setAttribute('value', "y(t) = x(t) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2.5 2.5 2.5');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.6 0.6 0.6');
             this.box.appendChild(this.text); 
 
             if (mod_inv != 0) {
@@ -751,6 +756,7 @@ AFRAME.registerComponent('neg-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_pulse);
+                this.box.setAttribute('rotation', '0 -90 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -765,8 +771,8 @@ AFRAME.registerComponent('neg-pulse', {
                 this.text.setAttribute('value', "y(t) = -x(t)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.6 0 0.25');
-                this.text.setAttribute('scale', '3.25 3.25 3.25');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
@@ -793,6 +799,7 @@ AFRAME.registerComponent('neg-pulse', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_neg_pulse);
+                this.box.setAttribute('rotation', '0 -90 0');
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
@@ -807,8 +814,8 @@ AFRAME.registerComponent('neg-pulse', {
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.5 0 0.25');
-                this.text.setAttribute('scale', '3.25 3.25 3.25');
+                this.text.setAttribute('position', '-0.4 0 0.1');
+                this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {

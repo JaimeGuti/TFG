@@ -23,10 +23,9 @@
     <body>
 
         <a-scene>
-            <!-- <a-entity environment="preset: default"></a-entity>  default, starry, moon -->
             
-            <a-entity id="rig" movement-controls="fly: true" position="0 1 12.5" wasd-controls="acceleration: 80: fly: false">
-                <a-entity camera id="camera" position="0 2.5 12.5" look-controls></a-entity>
+            <a-entity id="rig" movement-controls="fly: true" position="0 1 0" wasd-controls="acceleration: 80: fly: false">
+                <a-entity camera id="camera" position="0 2.5 0" look-controls></a-entity>
                 <a-entity cursor="rayOrigin: mouse" ></a-entity>
                 <a-entity environment="preset: starry"></a-entity> <!-- default, starry, moon -->
                 <a-entity light="type: ambient; color: #ffffff; intensity: 1"></a-entity> <!-- ambient, directional, hemisphere, point, spot, probe -->
@@ -35,21 +34,22 @@
                 <a-entity oculus-touch-controls="hand: left" oculus-thumbstick-controls></a-entity>
                 <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
                 <!-- Box move -->  
-                <a-entity sphere-collider="objects: .moveSine" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveSine" super-hands hand-controls="hand: left"></a-entity> -->
+                <a-entity sphere-collider="objects: .move" super-hands hand-controls="hand: left"></a-entity>
                 <a-entity sphere-collider="objects: .click" super-hands hand-controls="hand: right"></a-entity>
-                <a-entity sphere-collider="objects: .moveCosine" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveCosine" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveCosine" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .moveStep" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveStep" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveStep" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .movePulse" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .movePulse" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .movePulse" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .moveSignal1" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveSignal1" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveSignal1" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .moveSignal2" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveSignal2" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveSignal2" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .moveSignal3" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveSignal3" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveSignal3" super-hands hand-controls="hand: right"></a-entity> -->
-                <a-entity sphere-collider="objects: .moveSignal4" super-hands hand-controls="hand: left"></a-entity>
+                <!-- <a-entity sphere-collider="objects: .moveSignal4" super-hands hand-controls="hand: left"></a-entity> -->
                 <!-- <a-entity sphere-collider="objects: .moveSignal4" super-hands hand-controls="hand: right"></a-entity> -->
             </a-entity>
 
@@ -72,8 +72,8 @@
             </a-assets>
 
             <!-- SINE -->
-            <a-entity   class="moveSine" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="0 3.5 -5" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="-7.5 3.5 -17.5" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
                 <!-- FRAME SINE -->
                 <a-entity   geometry="width: 2.125;  height: 1.125;  depth: 0.2" material="color: #ffd700; opacity: 1" position="-3.25 0"
@@ -114,8 +114,8 @@
 
 
             <!-- COSINE -->
-            <a-entity   class="moveCosine" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="15 3.5 0" rotation="0 -70 0" material="color: #4CC3D9; transparent: false; opacity: 0.25"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="7.5 3.5 -17.5" rotation="0 0 0" material="color: #4CC3D9; transparent: false; opacity: 0.25"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME COSINE -->
@@ -157,8 +157,8 @@
 
 
             <!-- STEP -->
-            <a-entity   class="moveStep" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="17.5 3.5 12.5" rotation="0 -90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="17.5 3.5 -7.5" rotation="0 -90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME STEP -->
@@ -200,8 +200,8 @@
 
 
             <!-- PULSE -->
-            <a-entity   class="movePulse" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="15 3.5 25" rotation="0 -110 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="17.5 3.5 7.5" rotation="0 -90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME PULSE -->
@@ -243,8 +243,8 @@
 
 
             <!-- SIGNAL 1 -->
-            <a-entity   class="moveSignal1" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="0 3.5 30" rotation="0 180 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="7.5 3.5 17.5" rotation="0 180 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME SIGNAL 1 -->
@@ -286,8 +286,8 @@
 
 
             <!-- SIGNAL 2 -->
-            <a-entity   class="moveSignal2" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="-15 3.5 25" rotation="0 110 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="-7.5 3.5 17.5" rotation="0 180 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME SIGNAL 2 -->
@@ -329,8 +329,8 @@
 
 
             <!-- SIGNAL 3 -->
-            <a-entity   class="moveSignal3" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="-17.5 3.5 12.5" rotation="0 90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="-17.5 3.5 7.5" rotation="0 90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME SIGNAL 3 -->
@@ -372,8 +372,8 @@
 
 
             <!-- SIGNAL 4 -->
-            <a-entity   class="moveSignal4" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
-                        position="-15 3.5 0" rotation="0 70 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
+            <a-entity   class="move" geometry="primitive: box; width: 10; height: 4; depth: 0.2" 
+                        position="-17.5 3.5 -7.5" rotation="0 90 0" material="color: #4CC3D9; transparent: false; opacity: 0.15"
                         hoverable grabbable stretchable draggable dropppable>
 
                 <!-- FRAME SIGNAL 4 -->

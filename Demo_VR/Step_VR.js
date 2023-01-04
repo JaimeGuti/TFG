@@ -1,8 +1,8 @@
-var position_desp_step = '17.5 5 11.5';
-var position_scaled_step = '17.5 2 11.5';
-var position_inv_step = '17.5 5 13.75';
-var position_high_step = '17.5 2 13.75';
-var position_neg_step = '17.5 5 16';
+var position_desp_step = '17.25 5 -8.5';
+var position_scaled_step = '17.25 2 -8.5';
+var position_inv_step = '17.25 5 -6.25';
+var position_high_step = '17.25 2 -6.25';
+var position_neg_step = '17.25 5 -4';
 
 AFRAME.registerComponent('draw-step', {
     schema: {

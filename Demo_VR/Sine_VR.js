@@ -1,8 +1,8 @@
-var position_desp_sine = '-1 5 -5';
-var position_ampli_sine = '-1 2 -5';
-var position_inv_sine = '1.25 5 -5';
-var position_high_sine = '1.25 2 -5';
-var position_frec_sine = '3.5 5 -5';
+var position_desp_sine = '-8.5 5 -17.25';
+var position_ampli_sine = '-8.5 2 -17.25';
+var position_inv_sine = '-6.25 5 -17.25';
+var position_high_sine = '-6.25 2 -17.25';
+var position_frec_sine = '-4 5 -17.25';
 
 AFRAME.registerComponent('draw-sen', {
     schema: {
@@ -165,7 +165,7 @@ AFRAME.registerComponent('desp-sen', {
             this.text.setAttribute('value', "y(t) = sin(x " + sign + " " + randomNum + ")"); // ¡¡¡ CHANGE THIS !!!
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('position', '-0.45 0 0.1');
             this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
@@ -297,7 +297,7 @@ AFRAME.registerComponent('ampli-sen', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-0.4 0 0.25');
+            this.text.setAttribute('position', '-0.4 0 0.1');
             this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
@@ -400,8 +400,8 @@ AFRAME.registerComponent('inv-sen', {
                 this.text.setAttribute('value', "y(t) = sin(-x)");
                 this.text.setAttribute('color', 'red');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.8 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.45 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=360; x+=1) {
@@ -431,8 +431,8 @@ AFRAME.registerComponent('inv-sen', {
                 this.text.setAttribute('value', "y(t) = sin(x)");
                 this.text.setAttribute('color', 'black');
                 // this.text.setAttribute('position', 'center');
-                this.text.setAttribute('position', '-1.7 0 0.25');
-                this.text.setAttribute('scale', '3 3 3');
+                this.text.setAttribute('position', '-0.45 0 0.1');
+                this.text.setAttribute('scale', '0.75 0.75 0.75');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=360; x+=1) {
@@ -558,8 +558,8 @@ AFRAME.registerComponent('high-sen', {
             this.text.setAttribute('value', "y(t) = sin(x) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.9 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.45 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
@@ -692,8 +692,8 @@ AFRAME.registerComponent('frec-sen', {
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
             //this.text.setAttribute('position', 'center');
-            this.text.setAttribute('position', '-1.8 0 0.25');
-            this.text.setAttribute('scale', '2.25 2.25 2.25');
+            this.text.setAttribute('position', '-0.4 0 0.1');
+            this.text.setAttribute('scale', '0.5 0.5 0.5');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
