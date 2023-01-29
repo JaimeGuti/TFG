@@ -9,7 +9,7 @@ AFRAME.registerComponent('draw-sen', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'lightgreen'}
+        color: {default: 'DarkCyan'}
     },
 
     init: function () {
@@ -143,11 +143,10 @@ AFRAME.registerComponent('desp-sen', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_desp_sine);
-            // this.box.setAttribute('rotation', "0 45 0");
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -162,9 +161,8 @@ AFRAME.registerComponent('desp-sen', {
                 randomNum = -randomNum;
             }
 
-            this.text.setAttribute('value', "y(t) = sin(x " + sign + " " + randomNum + ")"); // ¡¡¡ CHANGE THIS !!!
+            this.text.setAttribute('value', "y(t) = sin(x " + sign + " " + randomNum + ")");
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2 2 2');
             this.box.appendChild(this.text);
@@ -173,7 +171,6 @@ AFRAME.registerComponent('desp-sen', {
                 var desp_y = 180;
                 var frec = 90;
                 var amplitude = 120;
-                // var desp_x = 45; // DESP
                 y = desp_y + Math.sin((x + mod_desp)*Math.PI/ frec )*amplitude;
                                                     //"zoom"
                 this.ctx.lineTo(x, y/2.5); // draw
@@ -271,7 +268,7 @@ AFRAME.registerComponent('ampli-sen', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -296,7 +293,6 @@ AFRAME.registerComponent('ampli-sen', {
 
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2 2 2');
             this.box.appendChild(this.text);
@@ -304,7 +300,6 @@ AFRAME.registerComponent('ampli-sen', {
             for(x=0; x<=360; x+=1) {
                 var desp_y = 180;
                 var frec = 90;
-                // var amplitude = 50; // AMPLI
                 var desp_x = 150; // DESP
                 y = desp_y - Math.sin((x - desp_x)*Math.PI/ frec )*amplitude;
                                                     //"zoom"
@@ -388,18 +383,16 @@ AFRAME.registerComponent('inv-sen', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_sine);
-                // this.box.setAttribute('rotation', "0 45 0");
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = sin(-x)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.8 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
@@ -418,19 +411,17 @@ AFRAME.registerComponent('inv-sen', {
                 this.scene = document.querySelector('a-scene');
                 this.box = document.createElement('a-box');
                 this.box.setAttribute('position', position_inv_sine);
-                // this.box.setAttribute('rotation', "0 45 0");
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = sin(x)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.7 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
@@ -536,11 +527,10 @@ AFRAME.registerComponent('high-sen', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_high_sine);
-            // this.box.setAttribute('rotation', "0 45 0");
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -557,13 +547,11 @@ AFRAME.registerComponent('high-sen', {
 
             this.text.setAttribute('value', "y(t) = sin(x) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.9 0 0.25');
             this.text.setAttribute('scale', '2.25 2.25 2.25');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
-                // var desp_y = 180; // HIGH
                 var frec = 90;
                 var amplitude = 120; // AMPLI
                 var desp_x = 150; // DESP
@@ -662,11 +650,10 @@ AFRAME.registerComponent('frec-sen', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_frec_sine);
-            // this.box.setAttribute('rotation', "0 45 0");
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -691,16 +678,15 @@ AFRAME.registerComponent('frec-sen', {
 
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2.25 2.25 2.25');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
                 var desp_y = 180; // HIGH
-                // var frec = 45;
                 var amplitude = 120; // AMPLI
                 var desp_x = 150; // DESP
+
                 y = desp_y - Math.sin((x - desp_x)*Math.PI/ frec )*amplitude;
                                                     //"zoom"
                 this.ctx.lineTo(x, y/2.5); // draw
@@ -723,8 +709,6 @@ AFRAME.registerComponent('frec-sen', {
 
             // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
             el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
-
-            // frec = 90;
         });
     }
 });

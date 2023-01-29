@@ -9,7 +9,7 @@ AFRAME.registerComponent('draw-pulse', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'green'}
+        color: {default: 'DarkKhaki'}
     },
 
     init: function () {
@@ -48,10 +48,7 @@ AFRAME.registerComponent('draw-pulse', {
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
-                var mod_desp = 0;
                    
                 y = desp_y - Math.max(desp_x, 0)*1;
 
@@ -94,7 +91,7 @@ AFRAME.registerComponent('desp-pulse', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'green'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -157,7 +154,7 @@ AFRAME.registerComponent('desp-pulse', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -174,18 +171,13 @@ AFRAME.registerComponent('desp-pulse', {
 
             this.text.setAttribute('value', "y(t) = x(t" + sign + randomNum + "to)");
             this.text.setAttribute('color', 'red');
-            // this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.7 0 0.25');
             this.text.setAttribute('scale', '2.25 2.25 2.25');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
-                // var mod_desp = 50;
-                // var mod_scaled = 0;
                    
                 y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
@@ -234,7 +226,7 @@ AFRAME.registerComponent('scaled-pulse', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'yellow'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -297,7 +289,7 @@ AFRAME.registerComponent('scaled-pulse', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.texto = document.createElement('a-text');
@@ -312,30 +304,26 @@ AFRAME.registerComponent('scaled-pulse', {
                 randomNum = -randomNum;
             }
 
-            if (mod_scaled < 0) {
-                var result = "y(t) = x(t/" + randomNum + ")";
-            } else if (mod_scaled > 0) {
+            if (mod_scaled > 0) {
                 var result = "y(t) = x(" + randomNum + "t)";
+            } else if (mod_scaled < 0) {
+                var result = "y(t) = x(t/" + randomNum + ")";
             } else {
                 var result = "y(t) = x(t)";
             }
 
             this.texto.setAttribute('value', result);
             this.texto.setAttribute('color', 'red');
-            //this.texto.setAttribute('position', 'center');
             this.texto.setAttribute('position', '-1.8 0 0.25');
             this.texto.setAttribute('scale', '3 3 3');
             this.box.appendChild(this.texto);            
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
                 var mod_desp = 0;
-                // var mod_scaled = 80;
                    
-                y = desp_y - Math.max(desp_x, 0)*1; // Modificas altura
+                y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
                 if (x < 100 + mod_desp) {
                     this.ctx.lineTo(0, 75);
@@ -373,7 +361,7 @@ AFRAME.registerComponent('scaled-pulse', {
             this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
             el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
         });
     }
@@ -384,7 +372,7 @@ AFRAME.registerComponent('inv-pulse', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'orange'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -443,22 +431,19 @@ AFRAME.registerComponent('inv-pulse', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = x(-t)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.6 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
                     var desp_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
                     var desp_x = 0.0;
                     var mod_desp = 0;
                     var mod_scaled = 0;
@@ -488,26 +473,23 @@ AFRAME.registerComponent('inv-pulse', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.55 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
-                    var desplazamiento_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
-                    var desplazamiento_x = 0.0;
+                    var desp_y = 180;
+                    var desp_x = 0.0;
                     var mod_desp = -100;
 
-                    y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1; // Modificas altura
+                    y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
                     if (x < 0 - mod_desp) {
                         this.ctx.lineTo(0, 75);
@@ -543,7 +525,7 @@ AFRAME.registerComponent('inv-pulse', {
             this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
             el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
 
             count++;
@@ -621,7 +603,7 @@ AFRAME.registerComponent('high-pulse', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -638,7 +620,6 @@ AFRAME.registerComponent('high-pulse', {
 
             this.text.setAttribute('value', "y(t) = x(t) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2.5 2.5 2.5');
             this.box.appendChild(this.text); 
@@ -649,12 +630,9 @@ AFRAME.registerComponent('high-pulse', {
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
                 var mod_desp = 0;
                 var mod_scaled = 0;
-                // var mod_high = 20;
                    
                 y = desp_y - Math.max(desp_x + mod_scaled, 0)*1; // Modify ampli
 
@@ -690,7 +668,7 @@ AFRAME.registerComponent('high-pulse', {
             this.material = new THREE.MultiMaterial(materials);
             this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });
+            // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
             el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
         });
     }
@@ -701,7 +679,7 @@ AFRAME.registerComponent('neg-pulse', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'tomato'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -754,7 +732,7 @@ AFRAME.registerComponent('neg-pulse', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
                 this.box.setAttribute('border-color', 'red');
@@ -764,19 +742,15 @@ AFRAME.registerComponent('neg-pulse', {
 
                 this.text.setAttribute('value', "y(t) = -x(t)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.6 0 0.25');
                 this.text.setAttribute('scale', '3.25 3.25 3.25');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
-                    var desplazamiento_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
-                    var desplazamiento_x = 0.0;
-                    var mod_desp = 0;
+                    var desp_y = 180;
+                    var desp_x = 0.0;
                     
-                    y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+                    y = desp_y - Math.max(desp_x, 0)*1;
 
                     if (x < 150) {
                         this.ctx.lineTo(x, 75);    
@@ -796,7 +770,7 @@ AFRAME.registerComponent('neg-pulse', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
                 this.box.setAttribute('border-color', 'red');
@@ -806,19 +780,15 @@ AFRAME.registerComponent('neg-pulse', {
 
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.5 0 0.25');
                 this.text.setAttribute('scale', '3.25 3.25 3.25');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
-                    var desplazamiento_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
-                    var desplazamiento_x = 0.0;
-                    var mod_desp = 0;
+                    var desp_y = 180;
+                    var desp_x = 0.0;
                     
-                    y = desplazamiento_y - Math.max(desplazamiento_x, 0)*1;
+                    y = desp_y - Math.max(desp_x, 0)*1;
 
                     if (x < 150) {
                         this.ctx.lineTo(x, 75);    
