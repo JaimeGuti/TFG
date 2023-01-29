@@ -9,7 +9,7 @@ AFRAME.registerComponent('draw-cos', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'blue'}
+        color: {default: 'DarkOliveGreen'}
     },
 
     init: function () {
@@ -82,7 +82,7 @@ AFRAME.registerComponent('desp-cos', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'green'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -146,7 +146,7 @@ AFRAME.registerComponent('desp-cos', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');  
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -161,9 +161,8 @@ AFRAME.registerComponent('desp-cos', {
                 randomNum = -randomNum;
             }
 
-            this.text.setAttribute('value', "y(t) = cos(x " + sign + " "  + randomNum + ")"); // ¡¡¡ CHANGE THIS !!!
+            this.text.setAttribute('value', "y(t) = cos(x " + sign + " "  + randomNum + ")");  
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2 2 2');
             this.box.appendChild(this.text);
@@ -172,7 +171,7 @@ AFRAME.registerComponent('desp-cos', {
                 var desp_y = 180;
                 var frec = 90;
                 var amplitude = 120;
-                // var desp_x = 45; // DESP
+
                 y = desp_y + Math.cos((x + mod_desp)*Math.PI/ frec )*amplitude;
                                                     //"zoom"
                 this.ctx.lineTo(x, y/2.5); // draw
@@ -206,7 +205,7 @@ AFRAME.registerComponent('ampli-cos', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'yellow'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -249,7 +248,7 @@ AFRAME.registerComponent('ampli-cos', {
             var minlimit = 1;
             var maxlimit = 200;
             var randomNum = Math.floor(Math.random() * (maxlimit)) + (minlimit);
-            console.log("Random number = " + randomNum);
+            // console.log("Random number = " + randomNum);
             
             amplitude = randomNum;
             if ((amplitude <= 1) || (amplitude >= 200)) {
@@ -270,7 +269,7 @@ AFRAME.registerComponent('ampli-cos', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');  
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -295,7 +294,6 @@ AFRAME.registerComponent('ampli-cos', {
 
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2 2 2');
             this.box.appendChild(this.text);
@@ -303,7 +301,6 @@ AFRAME.registerComponent('ampli-cos', {
             for(x=0; x<=360; x+=1) {
                 var desp_y = 180;
                 var frec = 90;
-                // var amplitude = 50; // AMPLI
                 var desp_x = 150; // DESP
                 y = desp_y - Math.cos((x - desp_x)*Math.PI/ frec )*amplitude;
                                                     //"zoom"
@@ -336,7 +333,7 @@ AFRAME.registerComponent('inv-cos', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'orange'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -389,14 +386,13 @@ AFRAME.registerComponent('inv-cos', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');  
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = cos(-x)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.8 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
@@ -418,14 +414,13 @@ AFRAME.registerComponent('inv-cos', {
                 this.box.setAttribute('width','4px');
                 this.box.setAttribute('height','2px');
                 this.box.setAttribute('depth','0.5px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');  
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = cos(x)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-1.7 0 0.25');
                 this.text.setAttribute('scale', '3 3 3');
                 this.box.appendChild(this.text);
@@ -534,7 +529,7 @@ AFRAME.registerComponent('high-cos', {
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');  
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -551,13 +546,11 @@ AFRAME.registerComponent('high-cos', {
 
             this.text.setAttribute('value', "y(t) = cos(x) " + sign + " " + randomNum);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.9 0 0.25');
             this.text.setAttribute('scale', '2.25 2.25 2.25');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
-                // var desp_y = 180; // HIGH
                 var frec = 90;
                 var amplitude = 120; // AMPLI
                 var desp_x = 150; // DESP
@@ -594,7 +587,7 @@ AFRAME.registerComponent('frec-cos', {
         width: {default: 9},
         height: {default: 4.5},
         depth: {default: 1},
-        color: {default: 'tomato'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -655,11 +648,10 @@ AFRAME.registerComponent('frec-cos', {
             this.scene = document.querySelector('a-scene');
             this.box = document.createElement('a-box');
             this.box.setAttribute('position', position_frec_cosine);
-            // this.box.setAttribute('rotation', "0 45 0");
             this.box.setAttribute('width','4px');
             this.box.setAttribute('height','2px');
             this.box.setAttribute('depth','0.5px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');  
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -684,14 +676,12 @@ AFRAME.registerComponent('frec-cos', {
 
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-1.8 0 0.25');
             this.text.setAttribute('scale', '2.25 2.25 2.25');
             this.box.appendChild(this.text);
 
             for(x=0; x<=360; x+=1) {
                 var desp_y = 180; // HIGH
-                // var frec = 45;
                 var amplitude = 120; // AMPLI
                 var desp_x = 150; // DESP
                 y = desp_y - Math.sin((x - desp_x)*Math.PI/ frec )*amplitude;
@@ -716,8 +706,6 @@ AFRAME.registerComponent('frec-cos', {
 
             // el.getObject3D('mesh').material = new THREE.MeshBasicMaterial({ map: this.texture });;
             el.getObject3D('mesh').material = new THREE.MultiMaterial(materials);
-
-            // frec = 90;
         });
     }
 });
