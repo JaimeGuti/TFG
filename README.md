@@ -1,2 +1,2 @@
 # TFG
-TFG: "Visualización de Señal en Realidad Virtual"
+CTFG: "Visualización de Señal en Realidad Virtual"
