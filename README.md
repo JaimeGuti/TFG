@@ -1,2 +1,2 @@
 # TFG
-CTFG: "Visualización de Señal en Realidad Virtual"
+Código fuente del TFG: "Visualización de Señal en Realidad Virtual"
