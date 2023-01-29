@@ -9,7 +9,7 @@ AFRAME.registerComponent('draw-signal_4', {
         width: {default: 2},
         height: {default: 1},
         depth: {default: 0.25},
-        color: {default: 'orange'}
+        color: {default: 'DarkBlue'}
     },
 
     init: function () {
@@ -48,10 +48,7 @@ AFRAME.registerComponent('draw-signal_4', {
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
-                var mod_desp = 0;
                    
                 y = desp_y - Math.max(desp_x, 0)*1;
                 
@@ -103,7 +100,7 @@ AFRAME.registerComponent('desp-signal_4', {
         width: {default: 2},
         height: {default: 1},
         depth: {default: 0.25},
-        color: {default: 'green'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -146,7 +143,7 @@ AFRAME.registerComponent('desp-signal_4', {
             var minlimit = -100;
             var maxlimit = 200;
             var randomNum = Math.floor(Math.random() * (maxlimit)) + (minlimit);
-            console.log("Random number = " + randomNum);
+            // console.log("Random number = " + randomNum);
             
             mod_desp = mod_desp + randomNum;
             if ((mod_desp < -100) || (mod_desp > 150)) {
@@ -168,7 +165,7 @@ AFRAME.registerComponent('desp-signal_4', {
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -185,18 +182,13 @@ AFRAME.registerComponent('desp-signal_4', {
 
             this.text.setAttribute('value', "y(t) = x(t" + sign + randomNum + "to)");
             this.text.setAttribute('color', 'red');
-            // this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-0.4 0 0.1');
             this.text.setAttribute('scale', '0.55 0.55 0.55');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
-                // var mod_desp = 50;
-                // var mod_scaled = 0;
                    
                 y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
@@ -248,7 +240,7 @@ AFRAME.registerComponent('scaled-signal_4', {
         width: {default: 2},
         height: {default: 1},
         depth: {default: 0.25},
-        color: {default: 'yellow'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -312,7 +304,7 @@ AFRAME.registerComponent('scaled-signal_4', {
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -338,18 +330,14 @@ AFRAME.registerComponent('scaled-signal_4', {
 
             this.text.setAttribute('value', result);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-0.4 0 0.1');
             this.text.setAttribute('scale', '0.75 0.75 0.75');
             this.box.appendChild(this.text);
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
                 var mod_desp = 0;
-                // var mod_scaled = 2;
                    
                 y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
@@ -423,7 +411,7 @@ AFRAME.registerComponent('inv-signal_4', {
         width: {default: 2},
         height: {default: 1},
         depth: {default: 0.25},
-        color: {default: 'orange'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -483,25 +471,21 @@ AFRAME.registerComponent('inv-signal_4', {
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = x(-t)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-0.4 0 0.1');
                 this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
                     var desp_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
                     var desp_x = 0.0;
                     var mod_desp = 0;
-                    var mod_scaled = 0;
                     
                     y = desp_y - Math.max(desp_x, 0)*1; // Modify high
 
@@ -533,22 +517,19 @@ AFRAME.registerComponent('inv-signal_4', {
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.scene.appendChild(this.box);
                             
                 this.text = document.createElement('a-text');
 
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-0.4 0 0.1');
                 this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
                 
                 for(x=0; x<=400; x+=1) {
                     var desp_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
                     var desp_x = 0.0;
                     var mod_desp = 0;
                        
@@ -670,7 +651,7 @@ AFRAME.registerComponent('high-signal_4', {
             this.box.setAttribute('width','1px');
             this.box.setAttribute('height','0.5px');
             this.box.setAttribute('depth','0.15px');
-            this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+            this.box.setAttribute('color', 'white');
             this.scene.appendChild(this.box);
                         
             this.text = document.createElement('a-text');
@@ -687,7 +668,6 @@ AFRAME.registerComponent('high-signal_4', {
 
             this.text.setAttribute('value', "y(t) = x(t) " + signo + " " + randomNum);
             this.text.setAttribute('color', 'red');
-            //this.text.setAttribute('position', 'center');
             this.text.setAttribute('position', '-0.4 0 0.1');
             this.text.setAttribute('scale', '0.6 0.6 0.6');
             this.box.appendChild(this.text);
@@ -698,12 +678,8 @@ AFRAME.registerComponent('high-signal_4', {
 
             for(x=0; x<=400; x+=1) {
                 var desp_y = 180;
-                var frec = 90;
-                var scaled = 120;
                 var desp_x = 0.0;
                 var mod_desp = 0;
-                var mod_scaled = 0;
-                // var mod_high = -20;
                    
                 y = desp_y - Math.max(desp_x, 0)*1; // Modify ampli
 
@@ -753,7 +729,7 @@ AFRAME.registerComponent('neg-signal_4', {
         width: {default: 2},
         height: {default: 1},
         depth: {default: 0.25},
-        color: {default: 'tomato'}
+        color: {default: 'black'}
     },
 
     init: function () {
@@ -807,7 +783,7 @@ AFRAME.registerComponent('neg-signal_4', {
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
                 this.box.setAttribute('border-color', 'red');
@@ -817,17 +793,13 @@ AFRAME.registerComponent('neg-signal_4', {
 
                 this.text.setAttribute('value', "y(t) = -x(t)");
                 this.text.setAttribute('color', 'red');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-0.4 0 0.1');
                 this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
                     var desp_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
                     var desp_x = 0.0;
-                    var mod_desp = 0;
                        
                     y = desp_y - Math.max(desp_x, 0)*1;
                     
@@ -859,7 +831,7 @@ AFRAME.registerComponent('neg-signal_4', {
                 this.box.setAttribute('width','1px');
                 this.box.setAttribute('height','0.5px');
                 this.box.setAttribute('depth','0.15px');
-                this.box.setAttribute('color', 'white'); // ¡¡¡ CHANGE THIS !!!
+                this.box.setAttribute('color', 'white');
                 this.box.setAttribute('border-width', '0.5px');
                 this.box.setAttribute('border-style', 'solid');
                 this.box.setAttribute('border-color', 'red');
@@ -869,17 +841,13 @@ AFRAME.registerComponent('neg-signal_4', {
 
                 this.text.setAttribute('value', "y(t) = x(t)");
                 this.text.setAttribute('color', 'black');
-                // this.text.setAttribute('position', 'center');
                 this.text.setAttribute('position', '-0.4 0 0.1');
                 this.text.setAttribute('scale', '0.8 0.8 0.8');
                 this.box.appendChild(this.text);
 
                 for(x=0; x<=400; x+=1) {
                     var desp_y = 180;
-                    var frec = 90;
-                    var scaled = 120;
                     var desp_x = 0.0;
-                    var mod_desp = 0;
                        
                     y = desp_y - Math.max(desp_x, 0)*1;
                     
